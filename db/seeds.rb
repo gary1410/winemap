@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'csv'
+
+filepath = Rails.root + 'lib/seeds/sonoma.csv'
+
+ActiveRecord::Base.transaction do
+  CSV.foreach(filepath, headers: true) do |row|
+    winery = Winery.new
+    if row['winery_type'].match('Tasting Room')
+      winery.name = row['name']
+      winery.address = row['address']
+      winery.city = row['city']
+      winery.zipcode = row['zipcode']
+      winery.winery_type = row['winery_type']
+      winery.tasting_room = row['tasting_room']
+      winery.tasting_room_hours = row['tasting_room_hours']
+      winery.ava = row['ava']
+      winery.save
+    end
+  end
+end
