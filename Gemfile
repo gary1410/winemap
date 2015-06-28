@@ -13,10 +13,32 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'geocoder'
 gem 'unicorn'
 
-group :development, :test do
-  gem 'byebug'
-
-  gem 'web-console', '~> 2.0'
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'capybara-screenshot'
+  gem 'foreman'
   gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'web-console', '~> 2.0'
 end
 
+group :development, :test do
+  gem 'awesome_print'
+  gem 'dotenv-rails'
+  gem 'factory_girl_rails'
+  gem 'formulaic'
+  gem 'pry-rails'
+  gem 'rspec-rails', '>= 3.2.1'
+  gem 'byebug'
+end
+
+group :test do
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'shoulda-matchers', require: false
+  gem 'simplecov', '>= 0.9', require: false
+  gem 'timecop'
+  gem 'webmock'
+end
