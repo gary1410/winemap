@@ -17,13 +17,7 @@ function initializeMap() {
 
   var map = new google.maps.Map(mapCanvas, mapOptions);
 
-  var wineryLocations = [
-    ["CARNEROS VINTNERS", 38.2493358, -122.4981057],
-    ["ROBLEDO FAMILY WINERY", 38.2473916, -122.4834992],
-    ["COONEY PROPERTIES 20 LLC OWNER", 38.241682, -122.480983],
-    ["ANABA WINES", 44.9101929, -72.370795],
-    ["ELSBREE CHARLES N JR TR", 38.5554739, -122.783964]
-  ]
+  var wineryLocations = locations // locations was defined when winery#index was called
 
   for ( i = 0 ; i < wineryLocations.length ; i++ ) {
     var title = wineryLocations[i][0];

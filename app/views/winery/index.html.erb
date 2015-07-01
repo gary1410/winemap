@@ -1,2 +1,6 @@
   <div id="map-canvas">
   </div>
+
+<% content_for :javascript do %>
+  var locations = <%= raw @winery_locations.to_json %>;
+<% end %>
