@@ -3,6 +3,6 @@ class Winery < ActiveRecord::Base
   after_validation :geocode
 
   def full_address
-    "#{address}, #{city}, #{zipcode}"
+    "#{address}, #{city}, CA #{zipcode}"
   end
 end
