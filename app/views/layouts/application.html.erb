@@ -13,11 +13,7 @@
 
   <%= yield %>
 
-  <% if content_for?(:javascript) %>
-    <script type="text/javascript">
-      <%= yield(:javascript) %>
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{GOOGLE_MAPS_API_KEY}">
     </script>
-  <% end %>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
 </body>
 </html>
