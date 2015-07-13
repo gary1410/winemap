@@ -4,13 +4,7 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
   <title>Winemap</title>
-  <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-  </style>
+  <%= Gon::Base.render_data({}) %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -19,11 +13,7 @@
 
   <%= yield %>
 
-  <% if content_for?(:javascript) %>
-    <script type="text/javascript">
-      <%= yield(:javascript) %>
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{GOOGLE_MAPS_API_KEY}">
     </script>
-  <% end %>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
 </body>
 </html>
