@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'geocoder'
 gem 'unicorn'
 gem 'gon'
+gem 'bootstrap-sass', '~> 3.3.5'
 
 group :development do
   gem 'better_errors'
