@@ -13,6 +13,7 @@ gem 'geocoder'
 gem 'unicorn'
 gem 'gon'
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'high_voltage', '~> 2.4.0'
 
 group :development do
   gem 'better_errors'

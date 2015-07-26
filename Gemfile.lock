@@ -106,6 +106,7 @@ GEM
       json
       multi_json
       request_store (>= 1.0.5)
+    high_voltage (2.4.0)
     i18n (0.7.0)
     jbuilder (2.3.0)
       activesupport (>= 3.0.0, < 5)
@@ -258,6 +259,7 @@ DEPENDENCIES
   formulaic
   geocoder
   gon
+  high_voltage (~> 2.4.0)
   jbuilder (~> 2.0)
   jquery-rails
   launchy
