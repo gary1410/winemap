@@ -5,8 +5,6 @@ Wineries should be made accessilble and discoverable.  We help make the winetast
 ### Version
 1.0.0
 
-And of course Dillinger itself is open source with a [public repository](https://github.com/joemccann/dillinger) on GitHub.
-
 ### Installation
 
 
