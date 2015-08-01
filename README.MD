@@ -9,10 +9,13 @@ And of course Dillinger itself is open source with a [public repository](https:/
 
 ### Installation
 
-You need Gulp installed globally:
 
 ```sh
 $ bundle install
+```
+
+This should create, migrate, and seed the database
+
+```sh
 $ rake db:setup
-    This should create, migrate, and seed the database
 ```
