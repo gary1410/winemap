@@ -1,10 +1,6 @@
-$( document ).ready(function() {
-
-  google.maps.event.addDomListener(window, 'load', initializeMap);
-
-});
-
-function initializeMap() {
+HelloWinery = {}
+HelloWinery.Maps = {}
+HelloWinery.Maps.initializeMap = function() {
 
   var mapCenter = new google.maps.LatLng(38.2590465, -122.5915786);
   var mapOptions = {
@@ -15,27 +11,27 @@ function initializeMap() {
   var map = new google.maps.Map(mapCanvas, mapOptions);
   var bounds = new google.maps.LatLngBounds();
 
-  mapLoop( map, bounds );
-
-  }
-
-  function mapLoop (map, bounds) {
-    var wineryLocations = gon.wineries // gon.wineries is from the index.html.erb
-
-    for ( i = 0 ; i < wineryLocations.length ; i++ ) {
-      var title = wineryLocations[i].title;
-      var position = new google.maps.LatLng(wineryLocations[i].latitude, wineryLocations[i].longitude);
-      bounds.extend(position);
-      markWineries( )
-    }
-
-  function markWineries(){
-    var marker = new google.maps.Marker({
-        position: position,
-        map: map,
-        title: title
-    });
-    map.fitBounds(bounds);
-  }
+  HelloWinery.Maps.mapLoop(map, bounds);
 
 }
+
+HelloWinery.Maps.mapLoop = function (map, bounds) {
+  // gon.wineries is from the index.html.erb
+  gon.wineries.forEach(function(winery){
+    var config = {}
+    config['map'] = map
+    config['title'] = winery.title
+    config['position'] = new google.maps.LatLng(winery.latitude, winery.longitude)
+    bounds.extend(config['position'])
+    placeMarker(config)
+  })
+
+  function placeMarker(config){
+    var marker = new google.maps.Marker(config);
+    config['map'].fitBounds(bounds);
+  }
+}
+
+$(document).ready(function() {
+  google.maps.event.addDomListener(window, 'load', HelloWinery.Maps.initializeMap);
+});
