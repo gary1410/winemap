@@ -1,0 +1,35 @@
+html, body, #map-canvas {
+  height: 100%;
+  margin: 0px;
+  padding: 0px
+}
+
+ #mc_embed_signup{
+  input.email{
+    margin: 0 auto;
+  }
+  text-align: center;
+  clear: left;
+  font: 14px Helvetica,Arial,sans-serif;
+  form{
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+form#mc-embedded-subscribe-form.validate{
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+#mc_embed_signup_scroll {
+  text-align: center;
+  input#mce-EMAIL.email{
+    margin: 0 auto;
+    margin-bottom: 10px;
+    color: black;
+  }
+  input#mc-embedded-subscribe.button{
+    margin: 0 auto;
+  }
+}

@@ -12,6 +12,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'geocoder'
 gem 'unicorn'
 gem 'gon'
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'high_voltage', '~> 2.4.0'
+gem 'rails_12factor', group: :production
 
 group :development do
   gem 'better_errors'

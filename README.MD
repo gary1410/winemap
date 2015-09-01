@@ -1,3 +1,19 @@
-**WineMap
+# HelloWinery
 
-**** Site that allows you to map the most efficient route between a collection of wineries
+Wineries should be made accessilble and discoverable.  We help make the winetasting planning better.
+
+### Version
+1.0.0
+
+### Installation
+
+
+```sh
+$ bundle install
+```
+
+This should create, migrate, and seed the database
+
+```sh
+$ rake db:setup
+```
