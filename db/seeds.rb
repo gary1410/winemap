@@ -5,7 +5,7 @@ filepath = Rails.root + 'lib/seeds/sonoma.csv'
 ActiveRecord::Base.transaction do
   CSV.foreach(filepath, headers: true) do |row|
     winery = Winery.new
-    if row['winery_type'].match('Tasting Room')
+    if row['winery_type'].match(/Tasting room/i)
       winery.name = row['name']
       winery.address = row['address']
       winery.city = row['city']
@@ -16,5 +16,6 @@ ActiveRecord::Base.transaction do
       winery.ava = row['ava']
       winery.save
     end
+    sleep 0.25
   end
 end
