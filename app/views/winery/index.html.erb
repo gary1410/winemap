@@ -1,2 +1,5 @@
-  <div id="map-canvas">
-  </div>
+<div id="map-canvas"></div>
+
+<% content_for :head do %>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=#{GOOGLE_MAPS_API_KEY}&callback=initializeMap"></script>
+<% end %>
