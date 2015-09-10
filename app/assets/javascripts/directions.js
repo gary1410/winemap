@@ -9,16 +9,16 @@ function initMap() {
   directionsDisplay.setMap(map);
   directionsDisplay.setPanel(document.getElementById('directions-panel'));
 
-  var wineTour = gon.winery_tour
-  calculateAndDisplayRoute(wineTour, directionsService, directionsDisplay);
+  calculateAndDisplayRoute(directionsService, directionsDisplay);
 }
 
-function calculateAndDisplayRoute(route, directionsService, directionsDisplay) {
-  var start = route.shift();
-  var end = route.pop();
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  var routeLocations = gon.winery_tour
+  var start = routeLocations.shift();
+  var end = routeLocations.pop();
   var startLocation = new google.maps.LatLng(start[0], start[1]);
   var endLocation = new google.maps.LatLng(end[0], end[1]);
-  var wayPoints = convertWayPointsToLatLon(route);
+  var wayPoints = convertWayPointsToLatLon(routeLocations);
   directionsService.route({
     origin: startLocation,
     destination: endLocation,
