@@ -3,6 +3,11 @@ class WineryController < ApplicationController
     gon.wineries = Winery.all
   end
 
+  def show
+    @winery = Winery.find(params[:id])
+    # binding.pry
+  end
+
   def directions
     gon.winery_tour = extract_lat_lon_values
   end
