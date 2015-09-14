@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'winery/directions' => 'winery#directions'
   resources :winery
   get 'pages/home' => 'high_voltage/pages#show', id: 'home'
 
